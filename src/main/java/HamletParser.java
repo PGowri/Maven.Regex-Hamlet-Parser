@@ -39,14 +39,14 @@ public class HamletParser {
     }
 
     public String change(String find, String replace) {
-        Pattern pattern = Pattern.compile(find, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher("hamletData");
+        Pattern pattern = Pattern.compile(find);
+        Matcher matcher = pattern.matcher(hamletData);
         String change = matcher.replaceAll(replace);
         return change;
     }
 
    public boolean find(String name) {
-        Pattern pattern = Pattern.compile(name, Pattern.CASE_INSENSITIVE);
+        Pattern pattern = Pattern.compile(name);
         Matcher matcher = pattern.matcher(hamletData);
         return matcher.find();
     }
